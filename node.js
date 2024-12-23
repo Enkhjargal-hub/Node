@@ -90,24 +90,44 @@
 
 // Hereglegchees asuult asuugaad datag, songoson toogoor uusgej ugnu.
 
-import { faker } from "@faker-js/faker";
+// import { faker } from "@faker-js/faker";
 
-// Хэрэглэгчийн профайлыг үүсгэх функц
-function UserProfiles(numEntries) {
-  const userProfiles = [];
+// // Хэрэглэгчийн профайлыг үүсгэх функц
+// function UserProfiles(numEntries) {
+//   const userProfiles = [];
 
-  for (let i = 0; i < numEntries; i++) {
-    const user = {
-      name: faker.name.firstName() + " " + faker.name.lastName(),
-      email: faker.internet.email(),
-      avatar: faker.image.avatar(),
-    };
-    userProfiles.push(user);
-  }
+//   for (let i = 0; i < numEntries; i++) {
+//     const user = {
+//       name: faker.name.firstName() + " " + faker.name.lastName(),
+//       email: faker.internet.email(),
+//       avatar: faker.image.avatar(),
+//     };
+//     userProfiles.push(user);
+//   }
 
-  return userProfiles;
+//   return userProfiles;
+// }
+
+// // 2 хэрэглэгчийн профайлыг үүсгэх
+// const profiles = UserProfiles(2);
+// console.log(profiles);
+
+
+// san turshilt 
+
+
+function text(lower) {
+  return lower.toLowerCase(); // Бүх үсгийг жижиг болгох
 }
 
-// 2 хэрэглэгчийн профайлыг үүсгэх
-const profiles = UserProfiles(2);
-console.log(profiles);
+module.exports = {
+  text
+};
+
+const { text } = require('./text');
+
+const inputText = "Хүн Гэдэг ЗүрХ СэтГэлЭЭрээ УрГаж ЗүрХ СэтГэлЭЭрээ Хайрлах Байгалийн Бүтээл";
+const lowerCaseText = text(inputText);
+
+console.log(lowerCaseText);
+// Хэвлэх: "хүн гэдэг зүрх сэтгэлээрээ ургаж зүрх сэтгэлээрээ хайрлах байгалийн бүтээл"
